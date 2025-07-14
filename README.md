@@ -175,10 +175,4 @@ See the [LICENSE](LICENSE) file for full details.
 
 ---
 
-> 💬 *Pull requests, issues, and feedback are welcome!*
-
-```
-
----
-
 
