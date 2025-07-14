@@ -1,50 +1,46 @@
-
-# Live Demo : https://huggingface.co/spaces/abhisheksinha7742/house_price_prediction
-
-```markdown
 # 🏠 House Price Prediction
 
-A machine learning project that predicts house prices based on features such as area, number of bedrooms, bathrooms, stories, amenities, and more. This project includes a complete pipeline from data ingestion to model deployment with a Flask web interface.
+📍 **Live Demo:** [Click to View on Hugging Face Spaces 🚀](https://huggingface.co/spaces/abhisheksinha7742/house_price_prediction)
+
+A machine learning project to predict house prices based on features like area, number of bedrooms, bathrooms, stories, parking, and amenities. It features a full ML pipeline, model training, and a user-friendly Flask web interface—ready to deploy in Docker or Hugging Face Spaces.
 
 ---
 
 ## 🚀 Features
 
-- ✅ End-to-end ML pipeline (data ingestion, transformation, training)
-- ✅ Feature engineering with derived predictors
-- ✅ Model selection: Random Forest, Gradient Boosting, XGBoost
-- ✅ Logging & custom exception handling
-- ✅ Flask web interface for predictions
-- ✅ Docker support for containerized deployment
+- 📊 End-to-end ML pipeline (ingestion → transformation → training → prediction)
+- 🧠 Feature engineering with smart derived metrics
+- 🤖 Model selection: Random Forest, Gradient Boosting, XGBoost
+- 🪵 Logging and custom error handling
+- 🌐 Flask web interface for real-time predictions
+- 📦 Docker container support for deployment
+- 🔌 Hugging Face Spaces live demo integration
 
 ---
 
 ## 📁 Project Structure
 
-```
-
-house\_price\_prediction/
+```text
+house_price_prediction/
 ├── notebooks/
 │   └── Housing.csv            # Raw dataset
 ├── src/
 │   ├── components/            # Core pipeline components
-│   │   ├── data\_ingestion.py
-│   │   ├── data\_transformation.py
-│   │   └── model\_trainer.py
-│   ├── pipeline/              # Training and prediction pipelines
-│   │   ├── train\_pipeline.py
-│   │   └── predict\_pipeline.py
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   ├── pipeline/              # Training & prediction pipelines
+│   │   ├── train_pipeline.py
+│   │   └── predict_pipeline.py
 │   ├── exception.py           # Custom exception handling
 │   └── logger.py              # Logging configuration
 ├── templates/
-│   └── home.html              # HTML for Flask frontend
-├── app.py                     # Main Flask app
+│   └── home.html              # HTML template for Flask UI
+├── app.py                     # Flask application
 ├── Dockerfile                 # Docker setup
-├── requirements.txt           # Dependencies list
-├── setup.py                   # Package configuration
-└── .gitignore
-
-````
+├── requirements.txt           # Python dependencies
+├── setup.py                   # Packaging setup
+└── .gitignore                 # Ignored files
 
 ---
 
@@ -52,37 +48,38 @@ house\_price\_prediction/
 
 ### ✅ Prerequisites
 
-- Python 3.9+
-- `pip`
-- Docker (optional, for containerization)
+* Python 3.9+
+* `pip`
+* Docker (optional)
 
-### 🔧 Setup Instructions
+### 🔧 Steps
 
-1. **Clone the repository:**
+1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/house_price_prediction.git
    cd house_price_prediction
-````
+   ```
 
-2. **Install dependencies:**
+2. **Install the dependencies**
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Run training pipeline:**
+3. **Train the model**
 
    ```bash
    python src/pipeline/train_pipeline.py
    ```
 
-4. **Launch the Flask app:**
+4. **Run the Flask app**
 
    ```bash
    python app.py
    ```
 
-5. **Visit the web interface:**
+5. **Open in browser**
 
    ```
    http://localhost:7860
@@ -92,19 +89,21 @@ house\_price\_prediction/
 
 ## 🐳 Docker Deployment
 
-1. **Build the Docker image:**
+> Run the app in a containerized environment
+
+1. **Build Docker image**
 
    ```bash
    docker build -t house-price-prediction .
    ```
 
-2. **Run the Docker container:**
+2. **Start container**
 
    ```bash
    docker run -p 7860:7860 house-price-prediction
    ```
 
-3. **Access the application at:**
+3. **Access app**
 
    ```
    http://localhost:7860
@@ -112,65 +111,74 @@ house\_price\_prediction/
 
 ---
 
-## 💡 Usage
+## 💡 Usage Instructions
 
-1. Open the web interface.
-2. Enter house details:
+1. Open the app in your browser.
+2. Fill in the house features:
 
-   * Area (sq. ft.)
-   * Bedrooms
-   * Bathrooms
-   * Stories
-   * Amenities (main road, guest room, basement, etc.)
-   * Parking spots
-   * Furnishing status
-3. Click **"Predict Price"** to view the estimated value.
+   * 📐 Area (in sq. ft.)
+   * 🛏️ Bedrooms
+   * 🛁 Bathrooms
+   * 🏢 Stories
+   * 🚗 Parking spots
+   * ✅ Amenities (main road, guest room, basement, etc.)
+   * 🛋️ Furnishing status
+3. Click **“Predict Price”** to view the estimated house value.
 
 ---
 
-## 🤖 Models Used
+## 🧠 Models Compared
 
-The app compares multiple regression models and selects the best one based on performance:
+* 🌲 Random Forest Regressor
+* 🔥 Gradient Boosting Regressor
+* ⚡ XGBoost Regressor
 
-* Random Forest Regressor
-* Gradient Boosting Regressor
-* XGBoost Regressor
+> The model with the best performance is selected automatically for prediction.
 
 ---
 
 ## 🧪 Feature Engineering
 
-Advanced feature creation includes:
+Derived features include:
 
 * Area per bedroom
 * Bedroom-to-bathroom ratio
 * Total room count
 * Parking per room
-* Luxury score based on amenities
-* Area per story
 * Amenities count
+* Luxury score based on amenity presence
+* Area per story
 * Luxury area (luxury score × area)
-* Stories × parking interaction
+* Interaction terms (e.g. stories × parking)
 
 ---
 
-## 📝 Logging
+## 📋 Logging
 
-All logs are stored in the `logs/` directory with timestamps. This helps with debugging and tracking pipeline runs.
-
----
-
-## 🪪 License
-
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+* All activities are logged to the `logs/` directory.
+* Helpful for debugging, model tracking, and audit trails.
 
 ---
 
-## 👤 Author
+## 📄 License
+
+Licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for full details.
+
+---
+
+## 👨‍💻 Author
 
 **Abhishek Sinha**
 📧 [abhisheksinha.7742@gmail.com](mailto:abhisheksinha.7742@gmail.com)
+🔗 [Hugging Face Profile](https://huggingface.co/spaces/abhisheksinha7742)
+
+---
+
+> 💬 *Pull requests, issues, and feedback are welcome!*
 
 ```
+
+---
 
 
